@@ -4,6 +4,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:x_device_info_util/internal/check_platform.dart' as _i3;
 import 'package:x_device_info_util/internal/check_web.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -31,6 +32,60 @@ class MockICheckWeb extends _i1.Mock implements _i2.ICheckWeb {
   bool isWeb() => (super.noSuchMethod(
         Invocation.method(
           #isWeb,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
+}
+
+/// A class which mocks [ICheckPlatform].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockICheckPlatform extends _i1.Mock implements _i3.ICheckPlatform {
+  MockICheckPlatform() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  bool isAndroid() => (super.noSuchMethod(
+        Invocation.method(
+          #isAndroid,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  bool isIos() => (super.noSuchMethod(
+        Invocation.method(
+          #isIos,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  bool isWindows() => (super.noSuchMethod(
+        Invocation.method(
+          #isWindows,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  bool isMacOS() => (super.noSuchMethod(
+        Invocation.method(
+          #isMacOS,
+          [],
+        ),
+        returnValue: false,
+      ) as bool);
+
+  @override
+  bool isLinux() => (super.noSuchMethod(
+        Invocation.method(
+          #isLinux,
           [],
         ),
         returnValue: false,
