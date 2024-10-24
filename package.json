@@ -1,0 +1,17 @@
+{
+  "name": "x_device_info_util",
+  "version": "1.0.0",
+  "description": "`x_device_info_util` là một gói Flutter giúp bạn dễ dàng lấy thông tin thiết bị trên nhiều nền tảng khác nhau, bao gồm Android, iOS, web, macOS, Windows, Linux, và Fuchsia.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "dart run build_runner build",
+    "build-coverage": "flutter test --coverage && brew install lcov",
+    "open-coverage": "open coverage/html/index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}

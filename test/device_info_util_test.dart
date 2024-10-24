@@ -119,7 +119,5 @@ void main() {
       // Assert
       expect(result, XPlatform.linux);
     });
-
-    // Add similar tests for Windows, MacOS, and Linux
   });
 }

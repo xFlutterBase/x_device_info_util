@@ -6,9 +6,10 @@ import 'internal/check_web.dart';
 class XDeviceInfoUtil {
   /// Constructs an instance of [XDeviceInfoUtil].
   ///
-  /// This constructor allows for the injection of a custom [checkWeb] instance,
-  /// which is used to determine if the application is running in a web environment.
-  /// If no instance is provided, it defaults to using [kCheckWeb].
+  /// This constructor allows for the injection of custom instances of [ICheckWeb]
+  /// and [ICheckPlatform], which are used to determine the environment the application
+  /// is running on. If no instances are provided, it defaults to using [kCheckWeb]
+  /// and [kCheckPlatform].
   const XDeviceInfoUtil(
       {this.checkWeb = kCheckWeb, this.checkPlatform = kCheckPlatform});
 

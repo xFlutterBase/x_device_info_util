@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - lib/device_info_util.dart</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory lib">lib</a> - device_info_util.dart<span style="font-size: 80%;"> (source / <a href="device_info_util.dart.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">10</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2024-10-24 14:20:39</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : import 'package:x_device_info_util/internal/check_platform.dart';</span>
+<span id="L2"><span class="lineNum">       2</span>              : import 'package:x_device_info_util/types/platform.dart';</span>
+<span id="L3"><span class="lineNum">       3</span>              : </span>
+<span id="L4"><span class="lineNum">       4</span>              : import 'internal/check_web.dart';</span>
+<span id="L5"><span class="lineNum">       5</span>              : </span>
+<span id="L6"><span class="lineNum">       6</span>              : class XDeviceInfoUtil {</span>
+<span id="L7"><span class="lineNum">       7</span>              :   /// Constructs an instance of [XDeviceInfoUtil].</span>
+<span id="L8"><span class="lineNum">       8</span>              :   ///</span>
+<span id="L9"><span class="lineNum">       9</span>              :   /// This constructor allows for the injection of custom instances of [ICheckWeb]</span>
+<span id="L10"><span class="lineNum">      10</span>              :   /// and [ICheckPlatform], which are used to determine the environment the application</span>
+<span id="L11"><span class="lineNum">      11</span>              :   /// is running on. If no instances are provided, it defaults to using [kCheckWeb]</span>
+<span id="L12"><span class="lineNum">      12</span>              :   /// and [kCheckPlatform].</span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC tlaBgGNC">           1 :   const XDeviceInfoUtil(</span></span>
+<span id="L14"><span class="lineNum">      14</span>              :       {this.checkWeb = kCheckWeb, this.checkPlatform = kCheckPlatform});</span>
+<span id="L15"><span class="lineNum">      15</span>              : </span>
+<span id="L16"><span class="lineNum">      16</span>              :   final ICheckWeb checkWeb;</span>
+<span id="L17"><span class="lineNum">      17</span>              :   final ICheckPlatform checkPlatform;</span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span>              :   /// Determines if the current platform is a web environment.</span>
+<span id="L20"><span class="lineNum">      20</span>              :   ///</span>
+<span id="L21"><span class="lineNum">      21</span>              :   /// This method uses the provided [checkWeb] instance to check if the</span>
+<span id="L22"><span class="lineNum">      22</span>              :   /// application is running on a web platform. By default, it uses [kCheckWeb]</span>
+<span id="L23"><span class="lineNum">      23</span>              :   /// if no other instance is provided.</span>
+<span id="L24"><span class="lineNum">      24</span>              :   ///</span>
+<span id="L25"><span class="lineNum">      25</span>              :   /// Returns `true` if the platform is web, otherwise `false`.</span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           1 :   bool isWeb() {</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           2 :     return checkWeb.isWeb();</span></span>
+<span id="L28"><span class="lineNum">      28</span>              :   }</span>
+<span id="L29"><span class="lineNum">      29</span>              : </span>
+<span id="L30"><span class="lineNum">      30</span>              :   /// Determines the current platform the application is running on.</span>
+<span id="L31"><span class="lineNum">      31</span>              :   ///</span>
+<span id="L32"><span class="lineNum">      32</span>              :   /// This method checks the environment to identify the platform. It first</span>
+<span id="L33"><span class="lineNum">      33</span>              :   /// checks if the application is running in a web environment using the</span>
+<span id="L34"><span class="lineNum">      34</span>              :   /// [isWeb] method. If not, it checks the native platforms in the following</span>
+<span id="L35"><span class="lineNum">      35</span>              :   /// order: Android, iOS, Windows, macOS, and Linux. If none of these platforms</span>
+<span id="L36"><span class="lineNum">      36</span>              :   /// match, it throws an exception indicating an unsupported platform.</span>
+<span id="L37"><span class="lineNum">      37</span>              :   ///</span>
+<span id="L38"><span class="lineNum">      38</span>              :   /// Returns an [XPlatform] enum value representing the current platform.</span>
+<span id="L39"><span class="lineNum">      39</span>              :   /// Throws an [Exception] if the platform is unsupported.</span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           1 :   XPlatform getPlatform() {</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           1 :     if (isWeb()) {</span></span>
+<span id="L42"><span class="lineNum">      42</span>              :       return XPlatform.web;</span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">           2 :     } else if (checkPlatform.isAndroid()) {</span></span>
+<span id="L44"><span class="lineNum">      44</span>              :       return XPlatform.android;</span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">           2 :     } else if (checkPlatform.isIos()) {</span></span>
+<span id="L46"><span class="lineNum">      46</span>              :       return XPlatform.ios;</span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">           2 :     } else if (checkPlatform.isWindows()) {</span></span>
+<span id="L48"><span class="lineNum">      48</span>              :       return XPlatform.windows;</span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">           2 :     } else if (checkPlatform.isMacOS()) {</span></span>
+<span id="L50"><span class="lineNum">      50</span>              :       return XPlatform.macos;</span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">           2 :     } else if (checkPlatform.isLinux()) {</span></span>
+<span id="L52"><span class="lineNum">      52</span>              :       return XPlatform.linux;</span>
+<span id="L53"><span class="lineNum">      53</span>              :     } else {</span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaUNC tlaBgUNC">           0 :       throw Exception('Unsupported platform');</span></span>
+<span id="L55"><span class="lineNum">      55</span>              :     }</span>
+<span id="L56"><span class="lineNum">      56</span>              :   }</span>
+<span id="L57"><span class="lineNum">      57</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.1-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

@@ -22,3 +22,8 @@
 |                  | - linux                            |
 | XDeviceInfoUtil  | - isWeb(): bool                    |
 |                  | - getPlatform(): XPlatform         |
+
+## Testing
+Để xuất được file coverage, bạn cần cài đặt lcov và chạy lệnh `npm run build-coverage` để tạo ra file `lcov.info` và `coverage/html/index.html`. Sau đó, chạy lệnh `npm run open-coverage` để mở file coverage.
+
+Yêu cầu cần cài đặt: `lcov` và `node`.
